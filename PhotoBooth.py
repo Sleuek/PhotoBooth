@@ -127,7 +127,7 @@ def overlayOnPreview():
 
 def printOnPreview(text):
 
-    img = Image.new('RGBA', (LARGEUR_PHOTO,HAUTEUR_PHOTO))
+    img = Image.new('RGBA', (500,500))
     #fnt = ImageFont.truetype('/Library/Fonts/Arial.ttf', 15)
     d = ImageDraw.Draw(img)
     d.text((10,10), text, fill=(255, 255, 0))
