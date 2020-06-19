@@ -162,8 +162,9 @@ def play():
 
     
         
-    fileName = time.strftime("%H%M%S")+".jpg"
-    fileName_Miroir = time.strftime("%H%M%S")+"_Miroir.jpg"
+    token = time.strftime("%H%M%S")
+    fileName = token +".jpg"
+    fileName_Miroir = token +"_Miroir.jpg"
     print("Nom de fichier créé : "+fileName)
 
     #precapture1(fileName)
@@ -184,7 +185,7 @@ def play():
     
 
     camera.stop_preview()
-    AfficherPhoto(archiveDir+"/"+fileName, fileName)
+    AfficherPhoto(archiveDir+"/"+fileName, token)
     #printOnPreview("filename")
     watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName+ '.png',
                                 '/home/pi/LayerInDaSowce.png', position=(0,0))
@@ -251,10 +252,10 @@ def AfficherPhoto(fileName,text): # affiche NomPhoto
     screen.blit(background,(0,0),(0,0,LARGEUR_ECRAN,HAUTEUR_ECRAN))
 
 
-    green = (255, 0 , 0) 
-    blue = (0, 0, 128) 
+    red = (255, 0 , 0) 
+    black = (255, 255, 255) 
     font = pygame.font.Font('freesansbold.ttf', 32)
-    text = font.render(text, True, green, blue)
+    text = font.render(text, True, black, red)
     textRect = text.get_rect() 
     textRect.center = (400 // 2, 200 // 2) 
     screen.blit(text, textRect) 
