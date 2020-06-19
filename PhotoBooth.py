@@ -195,10 +195,10 @@ def play():
     #time.sleep(5)
     
     #addPreviewOverlay(150,200,100,"Appuyez sur le bouton")
-   initCamera(camera)
-        print("Démarrage de l'aperçu")
-        camera.start_preview()
-        overlayOnPreview()
+    initCamera(camera)
+    print("Démarrage de l'aperçu")
+    camera.start_preview()
+    overlayOnPreview()
     #AfficherPhoto("/home/pi/LayerInDaSowce.png")
 
     #AfficherPhoto("/home/pi/Photomaton_Prev/accueil.png")
