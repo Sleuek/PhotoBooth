@@ -209,7 +209,7 @@ with picamera.PiCamera() as camera:
 
                     
     except BaseException:
-        #print("Heu ... Exception non gérée : " , exc_info=True)
+        print("Heu ... Exception non gérée : " , exc_info=True)
         camera.close()
         cleanUp()
     finally:
