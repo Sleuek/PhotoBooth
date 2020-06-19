@@ -133,7 +133,7 @@ def watermark_with_transparency(input_image_path,
     base_image = Image.open(input_image_path)
     watermark = Image.open(watermark_image_path)
     width, height = base_image.size
-    watermark.resize((width,height), Image.ANTIALIAS)
+    watermark.resize((width *2 ,height *2), Image.ANTIALIAS)
     transparent = Image.new('RGBA', (width, height), (0,0,0,0))
     transparent.paste(base_image, (0,0))
     transparent.paste(watermark, position, mask=watermark)
