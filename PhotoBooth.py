@@ -98,8 +98,10 @@ def addPreviewOverlay(xcoord,ycoord,fontSize,overlayText):
         overlay_renderer.update(img.tobytes())
 
 def overlayOnPreview():
+
+
     # Load the arbitrarily sized image
-    img = Image.open('/home/pi/LayerInDaSowce.png')
+    img = Image.open('/home/pi/LayerInDaSowceScreen.png')
     # Create an image padded to the required size with
     # mode 'RGB'
     valueL = ((img.size[0] + 31) // 32) * 32
