@@ -154,7 +154,7 @@ def watermark_with_transparency(input_image_path,
     transparent.show()
     transparent.save(output_image_path)
     os.system("mv "+output_image_path + " " + output_image_path.replace(".png",".jpg") )
-    os.system("chmod 777 ./" + output_image_path.replace(".png",".jpg"))
+    os.system("chmod 777 " + output_image_path.replace(".png",".jpg"))
 
 
 
