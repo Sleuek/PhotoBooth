@@ -153,6 +153,7 @@ def watermark_with_transparency(input_image_path,
     transparent.paste(watermark, position, mask=watermark)
     transparent.show()
     transparent.save(output_image_path)
+    os.system("mv "+output_image_path + " " + output_image_path.replace(".png",".jpg") )
 
 
 
