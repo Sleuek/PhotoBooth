@@ -189,7 +189,7 @@ def play():
     watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName+ '.png',
                                 '/home/pi/LayerInDaSowce.png', position=(0,0))
     #addPreviewOverlay(150,200,100,"Your token : " +fileName )
-    printOnPreview("filename");
+    #printOnPreview("filename");
     
 
     #time.sleep(5)
@@ -251,12 +251,12 @@ def AfficherPhoto(fileName,text): # affiche NomPhoto
     screen.blit(background,(0,0),(0,0,LARGEUR_ECRAN,HAUTEUR_ECRAN))
 
 
-    green = (0, 255, 0) 
+    green = (255, 0 , 0) 
     blue = (0, 0, 128) 
     font = pygame.font.Font('freesansbold.ttf', 32)
-    text = font.render('GeeksForGeeks', True, green, blue)
+    text = font.render(text, True, green, blue)
     textRect = text.get_rect() 
-    textRect.center = (200 // 2, 200 // 2) 
+    textRect.center = (400 // 2, 200 // 2) 
     screen.blit(text, textRect) 
     
     pygame.display.flip()
