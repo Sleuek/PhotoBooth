@@ -19,8 +19,8 @@ from pygame.locals import *
 CurrentWorkingDir= "/var/www/html/photos/Photomaton_Prev/"
 archiveDir       = "/var/www/html/photos/PhotosduPhotomaton"
 archiveDirWithLayer = "/var/www/html/photos/PhotosduPhotomatonWithLayer"
-LARGEUR_ECRAN     = 3280
-HAUTEUR_ECRAN    = 2464
+LARGEUR_ECRAN     = 1680
+HAUTEUR_ECRAN    = 1050
 LARGEUR_PHOTO      = 3280 
 HAUTEUR_PHOTO     = 2464
 PHOTO_DELAY      = 3 #délai en secondes avant prise de la photo
