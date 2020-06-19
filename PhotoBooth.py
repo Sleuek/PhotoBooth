@@ -28,8 +28,8 @@ overlay_renderer = None
 buttonEvent      = False
 
 pygame.init()
-screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
-#screen = pygame.display.set_mode((1920,1080),RESIZABLE)
+#screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+screen = pygame.display.set_mode((1920,1280),RESIZABLE)
 width, height = screen.get_size()
 
 
@@ -83,7 +83,7 @@ def addPreviewOverlay(xcoord,ycoord,fontSize,overlayText):
     draw = ImageDraw.Draw(img)
     draw.font = ImageFont.truetype(
                     "/usr/share/fonts/truetype/freefont/FreeSerif.ttf",fontSize)
-    draw.text((xcoord,ycoord), overlayText, (0, 0, 0))
+    draw.text((xcoord,ycoord), overlayText, (100, 100, 100))
 
     if not overlay_renderer:
         overlay_renderer = camera.add_overlay(img.tobytes(),
@@ -92,6 +92,8 @@ def addPreviewOverlay(xcoord,ycoord,fontSize,overlayText):
                                               alpha=128);
     else:
         overlay_renderer.update(img.tobytes())
+
+
 
 
 
