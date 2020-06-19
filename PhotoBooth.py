@@ -106,11 +106,13 @@ def overlayOnPreview():
     valueH = ((img.size[1] + 15) // 16) * 16
     print(valueL)
     print(valueH)
+    print(img.size[0])
+    print(img.size[1])
 
     pad = Image.new('RGBA', (
-        ((img.size[0] + 31) // 32) * 32,
-        ((img.size[1] + 15) // 16) * 16,
-        ))
+        img.size[0],
+        img.size[1]),
+        )
    
     # Paste the original image into the padded one
     pad.paste(img, (0, 0))
