@@ -125,6 +125,20 @@ def overlayOnPreview():
     o.alpha = 255
     o.layer = 3
 
+def printOnPreview(text):
+
+    img = Image.new('RGBA', (LARGEUR_PHOTO,HAUTsEUR_PHOTO))
+    fnt = ImageFont.truetype('/Library/Fonts/Arial.ttf', 15)
+    d = ImageDraw.Draw(img)
+    d.text((10,10), text, font=fnt, fill=(255, 255, 0))
+
+    o = camera.add_overlay(img.tobytes(), size=img.size)
+    # By default, the overlay is in layer 0, beneath the
+    # preview (which defaults to layer 2). Here we make
+    # the new overlay semi-transparent, then move it above
+    # the preview
+    o.alpha = 255
+    o.layer = 3
 
 def watermark_with_transparency(input_image_path,
                                 output_image_path,
@@ -157,6 +171,12 @@ def play():
     #countdownFrom(PHOTO_DELAY)
     #precapture2(fileName)
    #time.sleep(2)
+    printOnPreview("3")
+    time.sleep(1)
+    printOnPreview("2")
+    time.sleep(1)
+    printOnPreview("1")
+    time.sleep(1)
     captureImage(fileName)
     time.sleep(1)    
     archiveImage(fileName)
@@ -165,10 +185,14 @@ def play():
 
     camera.stop_preview()
     AfficherPhoto(archiveDir+"/"+fileName)
+    printOnPreview("filename")
     watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName+ '.png',
                                 '/home/pi/LayerInDaSowce.png', position=(0,0))
     #addPreviewOverlay(150,200,100,"Your token : " +fileName )
-    time.sleep(5)
+    printOnPreview("filename");
+    
+
+    #time.sleep(5)
     
     #addPreviewOverlay(150,200,100,"Appuyez sur le bouton")
     initCamera(camera)
