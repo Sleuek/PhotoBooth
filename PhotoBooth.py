@@ -178,7 +178,7 @@ def play():
     #time.sleep(1)
     #printOnPreview("1")
     #time.sleep(1)
-    captureImage(filename)
+    captureImage(fileName)
     time.sleep(1)    
     archiveImage(token)
     deleteImages(fileName)
