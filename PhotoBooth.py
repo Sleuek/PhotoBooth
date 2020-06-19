@@ -98,7 +98,7 @@ def overlayOnPreview():
     img = Image.open('/home/pi/LayerInDaSowce.png')
     # Create an image padded to the required size with
     # mode 'RGB'
-    pad = Image.new('RGB', (
+    pad = Image.new('RGBA', (
         ((img.size[0] + 31) // 32) * 32,
         ((img.size[1] + 15) // 16) * 16,
         ))
