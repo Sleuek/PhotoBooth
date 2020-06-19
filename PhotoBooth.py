@@ -103,7 +103,7 @@ def overlayOnPreview():
         ((img.size[1] + 15) // 16) * 16,
         ))
     # Paste the original image into the padded one
-    pad.paste(img, (0, 0),img)
+    pad.paste(img, (0, 0))
 
     # Add the overlay with the padded image as the source,
     # but the original image's dimensions
@@ -112,7 +112,7 @@ def overlayOnPreview():
     # preview (which defaults to layer 2). Here we make
     # the new overlay semi-transparent, then move it above
     # the preview
-    o.alpha = 128
+    o.alpha = 255
     o.layer = 3
 
 
