@@ -83,7 +83,7 @@ def addPreviewOverlay(xcoord,ycoord,fontSize,overlayText):
     draw = ImageDraw.Draw(img)
     draw.font = ImageFont.truetype(
                     "/usr/share/fonts/truetype/freefont/FreeSerif.ttf",fontSize)
-    draw.text((xcoord,ycoord), overlayText, (100, 100, 100))
+    draw.text((xcoord,ycoord), overlayText, fill=(255,255,255,255))
 
     if not overlay_renderer:
         overlay_renderer = camera.add_overlay(img.tobytes(),
