@@ -16,12 +16,12 @@ import pygame
 from pygame.locals import *
 
 
-CurrentWorkingDir= "/home/pi/Photomaton_Prev/"
-archiveDir       = "/home/pi/PhotosduPhotomaton"
-LARGEUR_ECRAN     = 1280
-HAUTEUR_ECRAN    = 960
-LARGEUR_PHOTO      = 1280
-HAUTEUR_PHOTO     = 960
+CurrentWorkingDir= "/var/www/html/photos/Photomaton_Prev/"
+archiveDir       = "/var/www/html/photos/PhotosduPhotomaton"
+LARGEUR_ECRAN     = 1920
+HAUTEUR_ECRAN    = 1280
+LARGEUR_PHOTO      = 3280
+HAUTEUR_PHOTO     = 2464
 PHOTO_DELAY      = 5 #délai en secondes avant prise de la photo
 overlay_renderer = None
 buttonEvent      = False
@@ -96,8 +96,8 @@ def play():
 
     
         
-    fileName = time.strftime("%Y%m%d-%H%M%S")+".jpg"
-    fileName_Miroir = time.strftime("%Y%m%d-%H%M%S")+"_Miroir.jpg"
+    fileName = time.strftime("%H%M%S")+".jpg"
+    fileName_Miroir = time.strftime("%H%M%S")+"_Miroir.jpg"
     print("Nom de fichier créé : "+fileName)
 
     #precapture1(fileName)
@@ -114,9 +114,13 @@ def play():
     camera.stop_preview()
     
     AfficherPhoto(archiveDir+"/"+fileName)
-    addPreviewOverlay(150,200,100,"--> Joli ;-)")
+    addPreviewOverlay(150,200,100,"Your token : " +fileName )
     time.sleep(3)
     
+    initCamera(camera)
+    print("Démarrage de l'aperçu")
+    camera.start_preview()
+
     #AfficherPhoto("/home/pi/Photomaton_Prev/accueil.png")
     #addPreviewOverlay(20,200,55,"--> Appuyez sur le bouton Rouge")
 
@@ -141,7 +145,7 @@ def initCamera(camera):
     camera.awb_mode              = 'auto'
     camera.image_effect          = 'none'
     camera.color_effects         = None
-    camera.rotation              = 0
+    camera.rotation              = 180
     camera.hflip                 = False
     camera.vflip                 = False
     camera.crop                  = (0.0, 0.0, 1.0, 1.0)
