@@ -72,7 +72,7 @@ def precapture2(imageName):
     
     
 def captureImage(imageName):
-    addPreviewOverlay(150,200,100,"--> Merci !   :-)")
+    #addPreviewOverlay(150,200,100,"--> Merci !   :-)")
     #Sauvegarde de l'image
     camera.capture(imageName, resize=(LARGEUR_PHOTO, HAUTEUR_PHOTO))
     print("Image "+imageName+" enregistrée.")
