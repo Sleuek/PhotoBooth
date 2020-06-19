@@ -54,7 +54,7 @@ def archiveImage(fileName):
     logging.info("Sauvegarde de l'image : "+fileName)
     copyfile(fileName,archiveDir+"/"+fileName)
 
-    watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName,
+    watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName+ '.png',
                                 '/home/pi/LayerInDaSowce.png', position=(0,0))
    # background = Image.open(archiveDir+"/"+fileName)
     #foreground = Image.open("/home/pi/LayerInDaSowce.png")
