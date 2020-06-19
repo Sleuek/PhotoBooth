@@ -53,6 +53,9 @@ def cleanUp():
 def archiveImage(fileName):
     logging.info("Sauvegarde de l'image : "+fileName)
     copyfile(fileName,archiveDir+"/"+fileName)
+
+    watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName,
+                                '/home/pi/LayerInDaSowce.png', position=(0,0))
    # background = Image.open(archiveDir+"/"+fileName)
     #foreground = Image.open("/home/pi/LayerInDaSowce.png")
     #Image.alpha_composite(background, foreground).save(archiveDirWithLayer+"/layered_"+ fileName)
@@ -77,6 +80,7 @@ def captureImage(imageName):
     #addPreviewOverlay(150,200,100,"--> Merci !   :-)")
     #Sauvegarde de l'image
     camera.capture(imageName, resize=(LARGEUR_PHOTO, HAUTEUR_PHOTO))
+
     print("Image "+imageName+" enregistrée.")
 
 def addPreviewOverlay(xcoord,ycoord,fontSize,overlayText):
@@ -123,6 +127,19 @@ def overlayOnPreview():
     o.alpha = 255
     o.layer = 3
 
+
+def watermark_with_transparency(input_image_path,
+                                output_image_path,
+                                watermark_image_path,
+                                position):
+    base_image = Image.open(input_image_path)
+    watermark = Image.open(watermark_image_path)
+    width, height = base_image.size
+    transparent = Image.new('RGBA', (width, height), (0,0,0,0))
+    transparent.paste(base_image, (0,0))
+    transparent.paste(watermark, position, mask=watermark)
+    transparent.show()
+    transparent.save(output_image_path)
 
 
 
