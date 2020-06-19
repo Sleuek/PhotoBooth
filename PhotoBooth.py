@@ -83,19 +83,18 @@ def captureImage(imageName):
 
 def addPreviewOverlay(xcoord,ycoord,fontSize,overlayText):
     global overlay_renderer
-    img = Image.new("RGB", (LARGEUR_ECRAN, HAUTEUR_ECRAN))
+    img = Image.new("RGB", (LARGEUR_PHOTO, HAUTEUR_PHOTO))
     draw = ImageDraw.Draw(img)
     draw.font = ImageFont.truetype(
                     "/usr/share/fonts/truetype/freefont/FreeSerif.ttf",fontSize)
     draw.text((xcoord,ycoord), overlayText, (255, 20, 147))
 
-    if not overlay_renderer:
-        overlay_renderer = camera.add_overlay(img.tobytes(),
+
+    overlay_renderer = camera.add_overlay(img.tobytes(),
                                               layer=3,
                                               size=img.size,
                                               alpha=128);
-    else:
-        overlay_renderer.update(img.tobytes())
+
 
 def overlayOnPreview():
 
