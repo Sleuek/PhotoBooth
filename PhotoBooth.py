@@ -18,11 +18,12 @@ from pygame.locals import *
 
 CurrentWorkingDir= "/var/www/html/photos/Photomaton_Prev/"
 archiveDir       = "/var/www/html/photos/PhotosduPhotomaton"
+archiveDirWithLayer = "/var/www/html/photos/PhotosduPhotomatonWithLayer"
 LARGEUR_ECRAN     = 1920
 HAUTEUR_ECRAN    = 1280
-LARGEUR_PHOTO      = 3280
-HAUTEUR_PHOTO     = 2464
-PHOTO_DELAY      = 5 #délai en secondes avant prise de la photo
+LARGEUR_PHOTO      = 1920 
+HAUTEUR_PHOTO     = 1280
+PHOTO_DELAY      = 3 #délai en secondes avant prise de la photo
 overlay_renderer = None
 buttonEvent      = False
 
@@ -50,6 +51,10 @@ def cleanUp():
 def archiveImage(fileName):
     logging.info("Sauvegarde de l'image : "+fileName)
     copyfile(fileName,archiveDir+"/"+fileName)
+    background = Image.open(archiveDir+"/"+fileName)
+    foreground = Image.open("/home/pi/LayerInDaSowce.png")
+    Image.alpha_composite(background, foreground).save(archiveDirWithLayer+"/layered_"+ fileName)
+
     
 def countdownFrom(secondsStr):
     secondsNum = int(secondsStr)
@@ -78,7 +83,7 @@ def addPreviewOverlay(xcoord,ycoord,fontSize,overlayText):
     draw = ImageDraw.Draw(img)
     draw.font = ImageFont.truetype(
                     "/usr/share/fonts/truetype/freefont/FreeSerif.ttf",fontSize)
-    draw.text((xcoord,ycoord), overlayText, (255, 20, 147))
+    draw.text((xcoord,ycoord), overlayText, (0, 0, 0))
 
     if not overlay_renderer:
         overlay_renderer = camera.add_overlay(img.tobytes(),
@@ -108,18 +113,20 @@ def play():
     captureImage(fileName)
     time.sleep(1)    
     archiveImage(fileName)
-    
     deleteImages(fileName)
     
+
     camera.stop_preview()
     
     AfficherPhoto(archiveDir+"/"+fileName)
     addPreviewOverlay(150,200,100,"Your token : " +fileName )
-    time.sleep(3)
+    time.sleep(5)
     
+    addPreviewOverlay(150,200,100,"Appuyez sur le bouton")
     initCamera(camera)
     print("Démarrage de l'aperçu")
     camera.start_preview()
+    AfficherPhoto("./LayerInDaSowce.png")
 
     #AfficherPhoto("/home/pi/Photomaton_Prev/accueil.png")
     #addPreviewOverlay(20,200,55,"--> Appuyez sur le bouton Rouge")
@@ -181,6 +188,7 @@ with picamera.PiCamera() as camera:
         initCamera(camera)
         print("Démarrage de l'aperçu")
         camera.start_preview()
+        AfficherPhoto("./LayerInDaSowce.png")
 
     
 
