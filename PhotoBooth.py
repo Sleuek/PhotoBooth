@@ -110,7 +110,7 @@ def overlayOnPreview():
     print(valueH)
 
 
-    pad = Image.new('RGBA', (LARGEUR_ECRAN,HAUTEUR_ECRAN))
+    pad = Image.new('RGBA', (valueL,valueH))
    
     # Paste the original image into the padded one
     pad.paste(img, (0, 0))
