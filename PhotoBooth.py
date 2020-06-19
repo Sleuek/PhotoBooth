@@ -19,8 +19,8 @@ from pygame.locals import *
 CurrentWorkingDir= "/var/www/html/photos/Photomaton_Prev/"
 archiveDir       = "/var/www/html/photos/PhotosduPhotomaton"
 archiveDirWithLayer = "/var/www/html/photos/PhotosduPhotomatonWithLayer"
-LARGEUR_ECRAN     = 1080
-HAUTEUR_ECRAN    = 720
+LARGEUR_ECRAN     = 1680
+HAUTEUR_ECRAN    = 1050
 LARGEUR_PHOTOPREV      = 1080 
 HAUTEUR_PHOTOPREV     = 720
 LARGEUR_PHOTO      = 1080 
