@@ -138,7 +138,7 @@ def printOnPreview(text):
     # the new overlay semi-transparent, then move it above
     # the preview
     o.alpha = 255
-    o.layer = 3
+    o.layer = 2
 
 def watermark_with_transparency(input_image_path,
                                 output_image_path,
