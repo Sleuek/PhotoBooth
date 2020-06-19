@@ -171,7 +171,7 @@ def play():
     print("Nom de fichier créé : "+fileName)
 
     #precapture1(fileName)
-    time.sleep(2)
+    time.sleep(5)
     #countdownFrom(PHOTO_DELAY)
     #precapture2(fileName)
    #time.sleep(2)
