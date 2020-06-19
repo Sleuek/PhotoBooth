@@ -140,7 +140,7 @@ def play():
     
 def initCamera(camera):
     #camera settings
-    camera.resolution            = (LARGEUR_ECRAN, HAUTEUR_ECRAN)
+    camera.resolution            = (LARGEUR_PHOTO, HAUTEUR_PHOTO)
     camera.framerate             = 24
     camera.sharpness             = 0
     camera.contrast              = 0
@@ -209,7 +209,7 @@ with picamera.PiCamera() as camera:
 
                     
     except BaseException:
-        print("Heu ... Exception non gérée : " , exc_info=True)
+        #print("Heu ... Exception non gérée : " , exc_info=True)
         camera.close()
         cleanUp()
     finally:
