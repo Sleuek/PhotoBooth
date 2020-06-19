@@ -20,16 +20,16 @@ CurrentWorkingDir= "/var/www/html/photos/Photomaton_Prev/"
 archiveDir       = "/var/www/html/photos/PhotosduPhotomaton"
 archiveDirWithLayer = "/var/www/html/photos/PhotosduPhotomatonWithLayer"
 LARGEUR_ECRAN     = 1920
-HAUTEUR_ECRAN    = 1280
+HAUTEUR_ECRAN    = 1080
 LARGEUR_PHOTO      = 1920 
-HAUTEUR_PHOTO     = 1280
+HAUTEUR_PHOTO     = 1080
 PHOTO_DELAY      = 3 #délai en secondes avant prise de la photo
 overlay_renderer = None
 buttonEvent      = False
 
 pygame.init()
 #screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
-screen = pygame.display.set_mode((1920,1280),RESIZABLE)
+screen = pygame.display.set_mode((1920,180),RESIZABLE)
 width, height = screen.get_size()
 
 
