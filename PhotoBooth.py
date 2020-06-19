@@ -54,11 +54,9 @@ def archiveImage(fileName):
     logging.info("Sauvegarde de l'image : "+fileName)
     copyfile(fileName,archiveDir+"/"+fileName)
 
-    watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName+ '.png',
-                                '/home/pi/LayerInDaSowce.png', position=(0,0))
-   # background = Image.open(archiveDir+"/"+fileName)
-    #foreground = Image.open("/home/pi/LayerInDaSowce.png")
-    #Image.alpha_composite(background, foreground).save(archiveDirWithLayer+"/layered_"+ fileName)
+    #watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName+ '.png',
+                    #            '/home/pi/LayerInDaSowce.png', position=(0,0))
+  
 
     
 def countdownFrom(secondsStr):
@@ -165,8 +163,9 @@ def play():
     
 
     camera.stop_preview()
-    
     AfficherPhoto(archiveDir+"/"+fileName)
+    watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName+ '.png',
+                                '/home/pi/LayerInDaSowce.png', position=(0,0))
     #addPreviewOverlay(150,200,100,"Your token : " +fileName )
     time.sleep(5)
     
