@@ -52,7 +52,7 @@ def cleanUp():
     
 def archiveImage(fileName):
     logging.info("Sauvegarde de l'image : "+fileName)
-    copyfile(fileName,archiveDir+"/"+fileName)
+    copyfile(fileName + '.jpg' ,archiveDir+"/"+fileName + '.jpg')
 
     #watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName+ '.png',
                     #            '/home/pi/LayerInDaSowce.png', position=(0,0))
