@@ -253,7 +253,7 @@ def AfficherPhoto(fileName,text): # affiche NomPhoto
     font = pygame.font.Font('freesansbold.ttf', 32)
     text = font.render('GeeksForGeeks', True, green, blue)
     textRect = text.get_rect() 
-    textRect.center = (X // 2, Y // 2) 
+    textRect.center = (200 // 2, 200 // 2) 
     screen.blit(text, textRect) 
     
     pygame.display.flip()
