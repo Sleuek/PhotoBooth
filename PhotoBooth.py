@@ -250,6 +250,9 @@ def AfficherPhoto(fileName,text): # affiche NomPhoto
     background = pygame.transform.scale(background,(LARGEUR_ECRAN,HAUTEUR_ECRAN))
     screen.blit(background,(0,0),(0,0,LARGEUR_ECRAN,HAUTEUR_ECRAN))
 
+
+    green = (0, 255, 0) 
+    blue = (0, 0, 128) 
     font = pygame.font.Font('freesansbold.ttf', 32)
     text = font.render('GeeksForGeeks', True, green, blue)
     textRect = text.get_rect() 
