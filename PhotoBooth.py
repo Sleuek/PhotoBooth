@@ -109,7 +109,7 @@ def play():
 
     #precapture1(fileName)
     #time.sleep(2)
-    countdownFrom(PHOTO_DELAY)
+    #countdownFrom(PHOTO_DELAY)
     #precapture2(fileName)
    #time.sleep(2)
     captureImage(fileName)
@@ -121,10 +121,10 @@ def play():
     camera.stop_preview()
     
     AfficherPhoto(archiveDir+"/"+fileName)
-    addPreviewOverlay(150,200,100,"Your token : " +fileName )
+    #addPreviewOverlay(150,200,100,"Your token : " +fileName )
     time.sleep(5)
     
-    addPreviewOverlay(150,200,100,"Appuyez sur le bouton")
+    #addPreviewOverlay(150,200,100,"Appuyez sur le bouton")
     initCamera(camera)
     print("Démarrage de l'aperçu")
     camera.start_preview()
