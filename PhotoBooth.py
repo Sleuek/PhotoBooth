@@ -167,7 +167,7 @@ def play():
     
 def initCamera(camera):
     #camera settings
-    camera.resolution            = (LARGEUR_ECRAN, HAUTEUR_ECRAN)
+    camera.resolution            = (LARGEUR_PHOTO, HAUTEUR_PHOTO)
     camera.framerate             = 24
     camera.sharpness             = 0
     camera.contrast              = 0
