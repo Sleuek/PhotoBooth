@@ -144,7 +144,7 @@ def watermark_with_transparency(input_image_path,
                                 output_image_path,
                                 watermark_image_path,
                                 position):
-    base_image = Image.open(input_image_path)
+    base_image = Image.open(input_image_path+ '.jpg')
     watermark = Image.open(watermark_image_path)
     width, height = base_image.size
     watermark.thumbnail((width, height), Image.ANTIALIAS)
@@ -178,16 +178,16 @@ def play():
     #time.sleep(1)
     #printOnPreview("1")
     #time.sleep(1)
-    captureImage(fileName)
+    captureImage(filename)
     time.sleep(1)    
-    archiveImage(fileName)
+    archiveImage(token)
     deleteImages(fileName)
     
 
     camera.stop_preview()
     AfficherPhoto(archiveDir+"/"+fileName, token)
     #printOnPreview("filename")
-    watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName+ '.png',
+    watermark_with_transparency(archiveDir+"/"+token, archiveDirWithLayer+"/"+fileName+ '.png',
                                 '/home/pi/LayerInDaSowce.png', position=(0,0))
     #addPreviewOverlay(150,200,100,"Your token : " +fileName )
     #printOnPreview("filename");
