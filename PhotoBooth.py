@@ -126,7 +126,7 @@ def play():
     initCamera(camera)
     print("Démarrage de l'aperçu")
     camera.start_preview()
-    AfficherPhoto("./LayerInDaSowce.png")
+    AfficherPhoto("/home/pi/LayerInDaSowce.png")
 
     #AfficherPhoto("/home/pi/Photomaton_Prev/accueil.png")
     #addPreviewOverlay(20,200,55,"--> Appuyez sur le bouton Rouge")
@@ -188,7 +188,7 @@ with picamera.PiCamera() as camera:
         initCamera(camera)
         print("Démarrage de l'aperçu")
         camera.start_preview()
-        AfficherPhoto("./LayerInDaSowce.png")
+        AfficherPhoto("/home/pi/LayerInDaSowce.png")
 
     
 
