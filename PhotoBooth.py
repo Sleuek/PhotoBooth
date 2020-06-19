@@ -21,6 +21,8 @@ archiveDir       = "/var/www/html/photos/PhotosduPhotomaton"
 archiveDirWithLayer = "/var/www/html/photos/PhotosduPhotomatonWithLayer"
 LARGEUR_ECRAN     = 1680
 HAUTEUR_ECRAN    = 1050
+LARGEUR_PHOTOPREV      = 1680 
+HAUTEUR_PHOTOPREV     = 1050
 LARGEUR_PHOTO      = 3280 
 HAUTEUR_PHOTO     = 2464
 PHOTO_DELAY      = 3 #délai en secondes avant prise de la photo
@@ -167,7 +169,7 @@ def play():
     
 def initCamera(camera):
     #camera settings
-    camera.resolution            = (LARGEUR_PHOTO, HAUTEUR_PHOTO)
+    camera.resolution            = (LARGEUR_PHOTOPREV, HAUTEUR_PHOTOPREV)
     camera.framerate             = 24
     camera.sharpness             = 0
     camera.contrast              = 0
