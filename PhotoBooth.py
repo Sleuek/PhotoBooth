@@ -243,7 +243,7 @@ def onButtonDePress():
     
 
 
-def AfficherPhoto(fileName): # affiche NomPhoto
+def AfficherPhoto(fileName,text): # affiche NomPhoto
     print("loading image: " + fileName)
     background = pygame.image.load(fileName);
     background.convert_alpha()
