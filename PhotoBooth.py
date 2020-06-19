@@ -128,9 +128,9 @@ def overlayOnPreview():
 def printOnPreview(text):
 
     img = Image.new('RGBA', (LARGEUR_PHOTO,HAUTEUR_PHOTO))
-    fnt = ImageFont.truetype('/Library/Fonts/Arial.ttf', 15)
+    #fnt = ImageFont.truetype('/Library/Fonts/Arial.ttf', 15)
     d = ImageDraw.Draw(img)
-    d.text((10,10), text, font=fnt, fill=(255, 255, 0))
+    d.text((10,10), text, fill=(255, 255, 0))
 
     o = camera.add_overlay(img.tobytes(), size=img.size)
     # By default, the overlay is in layer 0, beneath the
