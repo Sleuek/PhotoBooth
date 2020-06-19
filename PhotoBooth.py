@@ -51,9 +51,9 @@ def cleanUp():
 def archiveImage(fileName):
     logging.info("Sauvegarde de l'image : "+fileName)
     copyfile(fileName,archiveDir+"/"+fileName)
-    background = Image.open(archiveDir+"/"+fileName)
-    foreground = Image.open("/home/pi/LayerInDaSowce.png")
-    Image.alpha_composite(background, foreground).save(archiveDirWithLayer+"/layered_"+ fileName)
+   # background = Image.open(archiveDir+"/"+fileName)
+    #foreground = Image.open("/home/pi/LayerInDaSowce.png")
+    #Image.alpha_composite(background, foreground).save(archiveDirWithLayer+"/layered_"+ fileName)
 
     
 def countdownFrom(secondsStr):
