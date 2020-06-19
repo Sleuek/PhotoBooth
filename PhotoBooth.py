@@ -127,7 +127,7 @@ def overlayOnPreview():
 
 def printOnPreview(text):
 
-    img = Image.new('RGBA', (1000  ,500))
+    img = Image.new('RGBA', (1000  ,2000))
     #fnt = ImageFont.truetype('/Library/Fonts/Arial.ttf', 15)
     d = ImageDraw.Draw(img)
     d.text((10,10), text, fill=(255, 255, 0))
@@ -166,16 +166,16 @@ def play():
     fileName_Miroir = time.strftime("%H%M%S")+"_Miroir.jpg"
     print("Nom de fichier créé : "+fileName)
 
-    #precapture1(fileName)
-    #time.sleep(2)
+    precapture1(fileName)
+    time.sleep(2)
     #countdownFrom(PHOTO_DELAY)
     #precapture2(fileName)
    #time.sleep(2)
-    printOnPreview("3")
-    time.sleep(1)
-    printOnPreview("2")
-    time.sleep(1)
-    printOnPreview("1")
+    #printOnPreview("3")
+    #time.sleep(1)
+    #printOnPreview("2")
+    #time.sleep(1)
+    #printOnPreview("1")
     time.sleep(1)
     captureImage(fileName)
     time.sleep(1)    
