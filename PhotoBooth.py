@@ -18,7 +18,7 @@ from pygame.locals import *
 
 CurrentWorkingDir= "/var/www/html/photos/Photomaton_Prev/"
 archiveDir       = "/var/www/html/photos/PhotosduPhotomaton"
-archiveDirWithLayer = "/var/www/html/photos"
+archiveDirWithLayer = "/var/www/html/photos/PhotosduPhotomatonWithLayer"
 LARGEUR_ECRAN     = 1680
 HAUTEUR_ECRAN    = 1050
 LARGEUR_PHOTOPREV      = 1080 
@@ -52,7 +52,7 @@ def cleanUp():
     
 def archiveImage(fileName):
     logging.info("Sauvegarde de l'image : "+fileName)
-    copyfile(fileName + '.jpg' ,archiveDir+"/"+fileName + '.jpg')
+    copyfile(fileName,archiveDir+"/"+fileName)
 
     #watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName+ '.png',
                     #            '/home/pi/LayerInDaSowce.png', position=(0,0))
@@ -144,7 +144,7 @@ def watermark_with_transparency(input_image_path,
                                 output_image_path,
                                 watermark_image_path,
                                 position):
-    base_image = Image.open(input_image_path+ '.jpg')
+    base_image = Image.open(input_image_path)
     watermark = Image.open(watermark_image_path)
     width, height = base_image.size
     watermark.thumbnail((width, height), Image.ANTIALIAS)
@@ -180,14 +180,14 @@ def play():
     #time.sleep(1)
     captureImage(fileName)
     time.sleep(1)    
-    archiveImage(token)
+    archiveImage(fileName)
     deleteImages(fileName)
     
 
     camera.stop_preview()
     AfficherPhoto(archiveDir+"/"+fileName, token)
     #printOnPreview("filename")
-    watermark_with_transparency(archiveDir+"/"+token, archiveDirWithLayer+"/"+fileName+ '.png',
+    watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName.replace('.jpg' , '.png'),
                                 '/home/pi/LayerInDaSowce.png', position=(0,0))
     #addPreviewOverlay(150,200,100,"Your token : " +fileName )
     #printOnPreview("filename");
