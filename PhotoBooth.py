@@ -83,7 +83,7 @@ def captureImage(imageName):
 
 def addPreviewOverlay(xcoord,ycoord,fontSize,overlayText):
     global overlay_renderer
-    img = Image.new("RGB", (LARGEUR_PHOTO, HAUTEUR_PHOTO))
+    img = Image.new("RGB", (LARGEUR_PHOTOPREV, HAUTEUR_PHOTOPREV))
     draw = ImageDraw.Draw(img)
     draw.font = ImageFont.truetype(
                     "/usr/share/fonts/truetype/freefont/FreeSerif.ttf",fontSize)
