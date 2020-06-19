@@ -184,8 +184,8 @@ def play():
     
 
     camera.stop_preview()
-    AfficherPhoto(archiveDir+"/"+fileName)
-    printOnPreview("filename")
+    AfficherPhoto(archiveDir+"/"+fileName, filename)
+    #printOnPreview("filename")
     watermark_with_transparency(archiveDir+"/"+fileName, archiveDirWithLayer+"/"+fileName+ '.png',
                                 '/home/pi/LayerInDaSowce.png', position=(0,0))
     #addPreviewOverlay(150,200,100,"Your token : " +fileName )
@@ -249,6 +249,10 @@ def AfficherPhoto(fileName): # affiche NomPhoto
     background.convert_alpha()
     background = pygame.transform.scale(background,(LARGEUR_ECRAN,HAUTEUR_ECRAN))
     screen.blit(background,(0,0),(0,0,LARGEUR_ECRAN,HAUTEUR_ECRAN))
+
+    text_surface, rect = GAME_FONT.render("Hello World!", (0, 0, 0))
+    screen.blit(text_surface, (40, 250))
+    
     pygame.display.flip()
 
 #Flux initial
