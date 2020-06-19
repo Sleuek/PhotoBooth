@@ -99,11 +99,10 @@ def overlayOnPreview():
     # Create an image padded to the required size with
     # mode 'RGB'
     pad = Image.new('RGB', (
-        ((img.size[0] + 31) // 32) * 32,
-        ((img.size[1] + 15) // 16) * 16,
-        ))
+        LARGEUR_PHOTO,
+        HAUTEUR_PHOTO)
     # Paste the original image into the padded one
-    pad.paste(img, (0, 0))
+    pad.paste(img, (0, 0),img)
 
     # Add the overlay with the padded image as the source,
     # but the original image's dimensions
